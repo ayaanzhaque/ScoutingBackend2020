@@ -1,0 +1,20 @@
+<-----------Current Backend Description----------->
+In the current backend, there is an allData.json file. This file has all the scouting data from the tablets. To get the scouting data from the tablets, plug in the tablet via micro usb, navigate to the root directory of PracticeScouting in the command prompt, and run "adb pull [full path of scouting data on tablet]". You then will have to manually copy the data from the text documents in the files directory to allData.json. The data from the tablets is already in json format, so all you have to do is copy the tablet data and paste it in allData.json with minimal editing.
+
+Inside views, there is an index.hbs. index.hbs is the format (physical components) of the website being hosted by firebase. It controls the componets of the websire and how it looks.
+
+index.js controls the hosted website dynamically. It is used when with the command "firebase deploy". It parses through the allData.json file to index.hbs, so the data can be viewed on the website. One common mistake is that index.js is looking in the wrong directory for allData.json. Wherever allData.json is, use that directory. If that is not the case, it will parse no data at all, and while it looks like the deploy is complete, nothing actually happened. Note even when the depoy is complete, it will take a few seconds for the website to change.
+
+To see the website, you can use the url that is given in funtions. But when you use it, you will see an error message, "Cannot GET null". Does this mean that the code is wrong? Did it not deploy correctly? No, it turns out that the given url is missing something very minor. If you look in index.js, you will see that the url requires a "/" at the end of the url for the summary data, and a "/full" at the end for the full set of data. Once you put the forward slash, it should work just fine. Optionaly, you can bookmark the correct url to save time.
+
+
+
+
+
+
+<-----------Making Your Own Backend----------->
+To create the backend, you have to first make a firebase project from firebase.google.com (you need a google account). Next, follow the instructions on the firebase docs to link the firebase project to a root directory that will hold the funtions directory. Once you have firebase set up, look inside the funtions folder in the root directory. You should see at least an index.js, node_modules, package-lock.json, and package.json. You can add as many files or folders in the functions directory as long as it doesn't interfere with index.js.
+
+To deploy your website, navigate to the root directory in the command prompt and run "firebase deploy". If there is an error saying that it is missing some package, then do "npm install [name of package]". Once it is deployed, then you can view the website by going to your project in console.firebase.google.com -> Funtions -> Dashboard. In the trigger column, there should be a url, which you can use to view the website.
+
+When you are starting to code, you will want some efficient way to debug. One nifty way is to use your own computer as a server. When you begin to code, navigate to the root directory in the command prompt and run the following command: "sudo firebase serve". It will then ask for your computer's password. While the command is running, you can use the port provided in the command prompt. When you kill the command, the connection to the port will no longer be active.

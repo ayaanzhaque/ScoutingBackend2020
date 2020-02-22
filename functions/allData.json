@@ -1,0 +1,28 @@
+[
+{
+    "Team_#": 7000,
+    "Match_#": 2,
+    "Alliance": "red",
+    "No Show?": "yes",
+    "Cross Initiation Line": "L1",
+    "Inner Port Auto": 1,
+    "Outer Port Auto": 9,
+    "Bottom Port Auto": 2,
+    "Inner Port TeleOp": 5,
+    "Outer Port TeleOp": 6,
+    "Bottom Port TeleOp": 4,
+    "Rotation Control": 6,
+    "Position Control": 6,
+    "Hang": 1,
+    "Buddy Hang": 1,
+    "Deployment Accuracy": 2,
+    "Penalties": 2,
+    "Defended": "yes",
+    "Played Defense": 1,
+    "Ground Intake": "yes",
+    "Notes": "none",
+    "Scouter": "Ayaan",
+    "Avg Points Defended": 40,
+    "Avg Points Undefended": 10
+}
+]
